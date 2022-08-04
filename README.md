@@ -2,7 +2,7 @@
 This Repo consists of all the documentation done during Physical Design Workshop using Openlane Flow and Google's SkyWater 130nm PDK.
 
 # Table of Contents
-  - [Introduction To RTL to GDSII Flow](#introduction-to-rtl-to-gdsii-flow)
+  - [RTL to GDSII Process Flow](#rtl-to-gdsii-process-flow)
   - [About Google SkyWater PDK](#about-google-skywater-pdk)
   - [List of All Open-Source Tools Used](#list-of-all-open-source-tools-used)
   - [Setting Up Environment](#setting-up-environment)
@@ -17,13 +17,26 @@ This Repo consists of all the documentation done during Physical Design Workshop
       - [Design Preparation](#design-preparation)
       - [Design Synthesis and Results](#design-synthesis-and-results)
       
-# Introduction To RTL to GDSII Flow
-  RTL to GDSII Flow refers to the all the steps involved in converting a logical Register Transfer Level(RTL) Design to a fabrication ready GDSII format. GDSII is a database file format which is an industry standard for data exchange of IC layout artwork.
+# RTL to GDSII Process Flow
+  RTL to GDSII Flow refers to the process of transforming logical Register Transfer Level(RTL) Design to a fabrication ready layout file in GDSII format. GDSII file is given to the foundary for chip fabrication.
+  
+  ![image](https://user-images.githubusercontent.com/88900482/182808199-5ff8f08a-9aa3-4aca-9cdf-805a1918c607.png)
+
+  
   The RTL to GSDII flow consists of following steps:
   - RTL Synthesis
+  ![image](https://user-images.githubusercontent.com/88900482/182809196-0245789b-c685-4d5a-a68e-9ab94722faad.png)
+
+  
   - Static Timing Analysis(STA)
-  
-  
+  - Design for Testability(DFT)
+  - Floorplanning
+  - Placement
+  - Clock Tree Synthesis(CTS)
+  - Routing
+  - GDSII format
+ 
+ 
   # List of All Open-Source Tools Used
   | Name of Tool | Application / Usage |
   | --- | --- |
