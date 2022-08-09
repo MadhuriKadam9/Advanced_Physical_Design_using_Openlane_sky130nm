@@ -116,4 +116,30 @@ Standard cells are placed in Placement run which is executed by command `run_pla
 <img width="939" alt="std_cell_place" src="https://user-images.githubusercontent.com/88900482/183689086-ec3a98be-2a69-4771-ac90-7f4a3d6f7bbf.PNG">
 
 
+# Day 3 - Design of Standard cell using Magic Layout and ngspice characterization
+
+## Inverter Layout to Netlist creation
+Inverter layout is imported from vsdsdcell git hub repo and it is then opened in magic with sk130A.tech file
+
+<img width="485" alt="inv_lay" src="https://user-images.githubusercontent.com/88900482/183697216-4aef554a-0738-408a-a7bf-f3716750a931.PNG">
+
+Then RC parasitics are extracted by using following commands in tkcon window. It gives .ext and .spice file as output of this event.
+` extract all`
+` ext2spice cthresh 0 rthresh 0 `
+` ext2spice `
+
+Modified Spice netlist of Inverter is shown below.
+
+![image](https://user-images.githubusercontent.com/88900482/183698497-d262ee5e-3fea-4cb7-b465-802e9df94817.png)
+
+## Spice Simulation of Inverter netlist
+Modified Spice netlist of Inverter is then run using ngspice with following command. 
+`ngspice <name-of-SPICE-netlist-file> `
+<img width="555" alt="op" src="https://user-images.githubusercontent.com/88900482/183699433-c84af498-3619-44f7-96a2-fe84030a2dca.PNG">
+
+<img width="855" alt="opplot" src="https://user-images.githubusercontent.com/88900482/183699483-847e11cf-c4ff-4a0f-992e-ec7f754aca88.PNG">
+
+Transient Response of Inverter
+<img width="896" alt="wf" src="https://user-images.githubusercontent.com/88900482/183699555-b41756bb-7ec7-49de-a6d2-74897cea1490.PNG">
+
 
