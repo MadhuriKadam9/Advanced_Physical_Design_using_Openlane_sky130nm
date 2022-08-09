@@ -77,3 +77,21 @@ This Repo consists of all the documentation done during Physical Design Workshop
 
   ![image](https://user-images.githubusercontent.com/88900482/183603861-f5bc753f-133e-47f1-b345-b340a0694636.png)
 
+ ## Invoking Openlane 
+  To start openlane in Linux Ubantu we need to run the docker command in the openlane terminal and give command `./flow.tcl -interactive ` for interactive mode of operation. 
+  
+  <img width="738" alt="O1" src="https://user-images.githubusercontent.com/88900482/183676867-15e07727-99f9-479f-901a-5538df06d9c9.PNG">
+Required package is selected by command ` package require openlane 0.9 `. 
+Then preparing our design for Openlane flow with command ` prep -design <design-name> `
+
+ <img width="492" alt="O2" src="https://user-images.githubusercontent.com/88900482/183679672-b710f028-59b0-49a9-857e-74985f5c136d.PNG">
+ 
+<img width="556" alt="S1-prep" src="https://user-images.githubusercontent.com/88900482/183679808-4b6dd550-cf69-46fa-a45a-24464a9c1ee4.PNG">
+ 
+  ### Running Synthesis of design and its results
+  
+  First step in Openlane flow is runnig RTL synthesis of Picorv32a for this input is Picorv32a.v file. It is done with command `run_synthesis`
+  
+  <img width="666" alt="synthesis-verilog" src="https://user-images.githubusercontent.com/88900482/183682218-1f311de1-87e3-41db-833b-c0954e482573.PNG">
+
+<img width="553" alt="syn-comp" src="https://user-images.githubusercontent.com/88900482/183682372-51bddeec-57e8-4c1f-9ced-c2b3bbdfa559.PNG">
