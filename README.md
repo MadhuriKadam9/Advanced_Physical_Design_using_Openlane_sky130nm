@@ -142,4 +142,19 @@ Modified Spice netlist of Inverter is then run using ngspice with following comm
 Transient Response of Inverter
 <img width="896" alt="wf" src="https://user-images.githubusercontent.com/88900482/183699555-b41756bb-7ec7-49de-a6d2-74897cea1490.PNG">
 
+# Day 4 - Pre-layout timing analysis and importance of good clock tree
+
+## Extracting lef file from Inverter mag file
+
+### Grid change
+<img width="706" alt="vsdinvmag" src="https://user-images.githubusercontent.com/88900482/183702204-bd6c9c6b-7502-4e33-bef1-3e2d5f193e40.PNG">
+
+<img width="906" alt="gridchange" src="https://user-images.githubusercontent.com/88900482/183702254-2f012116-284a-4b93-b55b-74f4abfb7457.PNG">
+
+### Writing lef
+![image](https://user-images.githubusercontent.com/88900482/183702384-a01ce0a7-f318-46d4-87d3-de7698f5de9b.png)
+
+![image](https://user-images.githubusercontent.com/88900482/183702445-d71112a5-b292-4ecc-9140-e886fb1cf29a.png)
+
+
 
