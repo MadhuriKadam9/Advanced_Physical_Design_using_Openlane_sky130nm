@@ -95,3 +95,25 @@ Then preparing our design for Openlane flow with command ` prep -design <design-
   <img width="666" alt="synthesis-verilog" src="https://user-images.githubusercontent.com/88900482/183682218-1f311de1-87e3-41db-833b-c0954e482573.PNG">
 
 <img width="553" alt="syn-comp" src="https://user-images.githubusercontent.com/88900482/183682372-51bddeec-57e8-4c1f-9ced-c2b3bbdfa559.PNG">
+
+# Day 2 - Running Floorplan and Placement and Analysing results
+
+## Floorplan
+Step 2 in Openlane flow after synthesis is floorplan. It is run by command `run_floorplan`
+ To see floorplan in magic we have to read merged.lef and picorv32a.floorplan.def that are resulted from floorplan run. 
+ 
+ <img width="384" alt="magic2" src="https://user-images.githubusercontent.com/88900482/183688201-bf965c87-71eb-47e4-8b9f-3524216156e1.PNG">
+ 
+ <img width="958" alt="magic1" src="https://user-images.githubusercontent.com/88900482/183688327-b8c6c8f7-f818-4e89-9623-f6a46e5d1590.PNG">
+
+## Placement
+Standard cells are placed in Placement run which is executed by command `run_placement `
+
+<img width="664" alt="placement" src="https://user-images.githubusercontent.com/88900482/183688826-22d18d55-8061-4a9b-a6a4-b98da0f0ed29.PNG">
+
+<img width="359" alt="place_magic" src="https://user-images.githubusercontent.com/88900482/183688918-4aaa4588-e743-4a1d-9ae9-e66e6fc9b62e.PNG">
+
+<img width="939" alt="std_cell_place" src="https://user-images.githubusercontent.com/88900482/183689086-ec3a98be-2a69-4771-ac90-7f4a3d6f7bbf.PNG">
+
+
+
