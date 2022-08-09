@@ -61,10 +61,19 @@ This Repo consists of all the documentation done during Physical Design Workshop
   | --- | --- |
   | [Yosys](https://github.com/YosysHQ/yosys) | Synthesis of RTL Design |
   | ABC | Mapping of Netlist |
+  | [OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA) | Static Timing Analysis |
+  | [OpenROAD](https://github.com/The-OpenROAD-Project/OpenROAD) | Floorplanning, Placement, CTS, Optimization, Routing |
+  | [TritonRoute](https://github.com/The-OpenROAD-Project/TritonRoute) | Detailed Routing |
+  | [Magic VLSI](http://opencircuitdesign.com/magic/) | Layout Tool |
+  | [NGSPICE](https://github.com/imr/ngspice) | SPICE Extraction and Simulation |
+  | SPEF_EXTRACTOR | Generation of SPEF file from DEF file |
   
   
   # Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
- ## Basic IC Design Terminologies
-  During the Physical Designing, one will come across multiple terminologies that are frequently used. Some of them are mentioned below:
-  - Package: It is a case that surrounds the circuit material to protect it from physical damage or corrosion and allow mounting of the electrical contacts connecting it to the printed circuit board (PCB). The below snippet shows an IC with 48 pins and Quad Flat No-Leads(QFN) package.
-  - Die: A die is a small block of semiconducting material on which a given functional circuit is fabricated.
+ ## Basic IC Definitions
+  The product of Physical design flow is IC which has two parts package and Chip (Die) as shown below.
+  - Package: It is a case that surrounds chip.
+  - Chip: It is a semiconductor die which consists of circuit functionality fabricated on the same
+
+  ![image](https://user-images.githubusercontent.com/88900482/183603861-f5bc753f-133e-47f1-b345-b340a0694636.png)
+
