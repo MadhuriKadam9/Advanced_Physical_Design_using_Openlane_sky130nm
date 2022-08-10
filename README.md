@@ -146,10 +146,24 @@ Transient Response of Inverter
 
 ## Extracting lef file from Inverter mag file
 
+![image](https://user-images.githubusercontent.com/88900482/183939979-6f106e98-9cd1-4d6b-b8cf-1842b75a64b7.png)
+
+Grid dimensions of layout i.e sky130_vsdinv.mag are changed as per given in above track.info file, as routing of li layer happens only on these grid lines.
+
 ### Grid change
+Grid dimension is changed by typing below command in tkcon window 
+` grid 0.46um 0.34um 0.23um 0.17um '
+
 <img width="706" alt="vsdinvmag" src="https://user-images.githubusercontent.com/88900482/183702204-bd6c9c6b-7502-4e33-bef1-3e2d5f193e40.PNG">
 
 <img width="906" alt="gridchange" src="https://user-images.githubusercontent.com/88900482/183702254-2f012116-284a-4b93-b55b-74f4abfb7457.PNG">
+
+Also we can verify that Input and output ports are there on intersection of horizontal and vertical grid lines as shown below
+Width of the std cell should be odd multiple of X pitch
+Width of cell = Check inner boundary distance = 2+0.5+0.5=3 i.e. odd multiple of grid box
+
+![image](https://user-images.githubusercontent.com/88900482/183943420-faf8d4cc-32cc-4e05-9d85-b320313ce987.png)
+
 
 ### Writing lef
 ![image](https://user-images.githubusercontent.com/88900482/183702384-a01ce0a7-f318-46d4-87d3-de7698f5de9b.png)
