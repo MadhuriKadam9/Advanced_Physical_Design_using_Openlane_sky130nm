@@ -78,7 +78,8 @@ This Repo consists of all the documentation done during Physical Design Workshop
   ![image](https://user-images.githubusercontent.com/88900482/183603861-f5bc753f-133e-47f1-b345-b340a0694636.png)
 
  ## Invoking Openlane 
-  To start openlane in Linux Ubantu we need to run the docker command in the openlane terminal and give command `./flow.tcl -interactive ` for interactive mode of operation. 
+  To start openlane in Linux Ubantu we need to run the docker command in the openlane terminal.
+  Then give command `./flow.tcl -interactive ` for interactive mode of operation. 
   
   <img width="738" alt="O1" src="https://user-images.githubusercontent.com/88900482/183676867-15e07727-99f9-479f-901a-5538df06d9c9.PNG">
   
@@ -126,7 +127,7 @@ Inverter layout is imported from vsdsdcell git hub repo and it is then opened in
 
 Then RC parasitics are extracted by using following commands in tkcon window. It gives .ext and .spice file as output of this event.
 ` extract all`
-` ext2spice cthresh 0 rthresh 0 `
+` ext2spice cthresh 0 rthresh 0`
 ` ext2spice `
 
 Modified Spice netlist of Inverter is shown below.
@@ -135,7 +136,8 @@ Modified Spice netlist of Inverter is shown below.
 
 ## Spice Simulation of Inverter netlist
 Modified Spice netlist of Inverter is then run using ngspice with following command. 
-`ngspice <name-of-SPICE-netlist-file> `
+`ngspice <name-of-SPICE-netlist-file>`
+
 <img width="555" alt="op" src="https://user-images.githubusercontent.com/88900482/183699433-c84af498-3619-44f7-96a2-fe84030a2dca.PNG">
 
 <img width="855" alt="opplot" src="https://user-images.githubusercontent.com/88900482/183699483-847e11cf-c4ff-4a0f-992e-ec7f754aca88.PNG">
@@ -149,7 +151,7 @@ Transient Response of Inverter
 
 ![image](https://user-images.githubusercontent.com/88900482/183939979-6f106e98-9cd1-4d6b-b8cf-1842b75a64b7.png)
 
-Grid dimensions of layout i.e sky130_vsdinv.mag are changed as per given in above track.info file, as routing of li layer happens only on these grid lines.
+Grid dimensions of layout i.e `sky130_vsdinv.mag` are changed as per given in above `track.info` file, as routing of li layer happens only on these grid lines.
 
 ### Grid change
 Grid dimension is changed by typing below command in tkcon window 
@@ -173,5 +175,9 @@ To write lef file execute command `lef write ` in tkcon window as below. This wi
 
 ![image](https://user-images.githubusercontent.com/88900482/183702445-d71112a5-b292-4ecc-9140-e886fb1cf29a.png)
 
+### Copying all required files on Picorv32a src folder
+In order to plug in our Sky130_vsdinv.lef file with Picorv32a. we need to copy all sky130_fd_sc_* files and Sky130_vsdinv.lef file in Picorv32a src folder as shown below.
+
+![image](https://user-images.githubusercontent.com/88900482/183951735-697ab199-d6c6-458b-a289-929dcaf9d83d.png)
 
 
