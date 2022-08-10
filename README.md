@@ -81,6 +81,7 @@ This Repo consists of all the documentation done during Physical Design Workshop
   To start openlane in Linux Ubantu we need to run the docker command in the openlane terminal and give command `./flow.tcl -interactive ` for interactive mode of operation. 
   
   <img width="738" alt="O1" src="https://user-images.githubusercontent.com/88900482/183676867-15e07727-99f9-479f-901a-5538df06d9c9.PNG">
+  
 Required package is selected by command ` package require openlane 0.9 `
 Then preparing our design for Openlane flow with command ` prep -design <design-name> `
 
