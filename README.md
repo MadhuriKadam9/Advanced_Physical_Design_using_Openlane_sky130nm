@@ -81,7 +81,7 @@ This Repo consists of all the documentation done during Physical Design Workshop
   To start openlane in Linux Ubantu we need to run the docker command in the openlane terminal and give command `./flow.tcl -interactive ` for interactive mode of operation. 
   
   <img width="738" alt="O1" src="https://user-images.githubusercontent.com/88900482/183676867-15e07727-99f9-479f-901a-5538df06d9c9.PNG">
-Required package is selected by command ` package require openlane 0.9 `. 
+Required package is selected by command ` package require openlane 0.9 `
 Then preparing our design for Openlane flow with command ` prep -design <design-name> `
 
  <img width="492" alt="O2" src="https://user-images.githubusercontent.com/88900482/183679672-b710f028-59b0-49a9-857e-74985f5c136d.PNG">
@@ -152,7 +152,7 @@ Grid dimensions of layout i.e sky130_vsdinv.mag are changed as per given in abov
 
 ### Grid change
 Grid dimension is changed by typing below command in tkcon window 
-` grid 0.46um 0.34um 0.23um 0.17um '
+` grid 0.46um 0.34um 0.23um 0.17um `
 
 <img width="706" alt="vsdinvmag" src="https://user-images.githubusercontent.com/88900482/183702204-bd6c9c6b-7502-4e33-bef1-3e2d5f193e40.PNG">
 
@@ -166,6 +166,8 @@ Width of cell = Check inner boundary distance = 2+0.5+0.5=3 i.e. odd multiple of
 
 
 ### Writing lef
+To write lef file execute command `lef write ` in tkcon window as below. This will create sky130_vsdinv.lef in vsdstdcelldesign folder.
+
 ![image](https://user-images.githubusercontent.com/88900482/183702384-a01ce0a7-f318-46d4-87d3-de7698f5de9b.png)
 
 ![image](https://user-images.githubusercontent.com/88900482/183702445-d71112a5-b292-4ecc-9140-e886fb1cf29a.png)
