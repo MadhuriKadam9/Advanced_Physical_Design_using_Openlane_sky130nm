@@ -261,4 +261,25 @@ To check whether our vsdinv.lef is included in merged.lef file, open merged .lef
 
 ![image](https://user-images.githubusercontent.com/88900482/184138273-db864f54-6056-4e1b-84d7-ce72d90074e6.png)
 
+# Analysing Floorplan in Magic
+Once we have done with the placement we will read corresponding merged.lef and picorv32a.placement.def files in magic by executing command given below.
+
+`06-08_06-23/results/placement$ magic -T /home/madhurib.saksham/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &`
+
+This will open Picorv32a floorplan with placement in magic as shown below
+
+![image](https://user-images.githubusercontent.com/88900482/184140103-4cbd8175-1bbd-4cfd-ac58-ed1dd78e7cb6.png)
+
+![image](https://user-images.githubusercontent.com/88900482/184140239-a451a7a6-50fa-4987-94e7-248fdf2756df.png)
+
+![image](https://user-images.githubusercontent.com/88900482/184140400-fdf7b45a-9755-46e3-8361-593cd1d50e86.png)
+
+![image](https://user-images.githubusercontent.com/88900482/184140443-f19b42f1-4f64-442f-94f5-9bd493b3c380.png)
+
+In above diagram layout we can see it has included our sky130_vsdinv.lef cell also metal 1 is shared between two vertical cells this is calle abuttment. Power and GND rails are shared.
+
+
+
+
+
 
