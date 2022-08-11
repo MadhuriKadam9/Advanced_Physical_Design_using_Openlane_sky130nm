@@ -333,13 +333,13 @@ To ensure this various clock distribution techniques are there as follows
    In a normal RTL to GDSII flow the PDN generation is done before the placement step, but in the OpenLANE flow PDN is executed after the Clock Tree Synthesis(CTS). This step generates all the tracks and power rails on layout required for the design. 
    PDN Generation is executed by runnig following commands one by one.
    
-    `init_floorplan`
-    `place_io`
-    `global_placement_or`
-    `detailed_placement`
-    `tap_decap_or`
-    `detailed_placement`
-    `gen_pdn`
+     init_floorplan
+     place_io
+     global_placement_or
+     detailed_placement
+     tap_decap_or
+     detailed_placement
+     gen_pdn
     
 
 ![image](https://user-images.githubusercontent.com/88900482/184164673-2aea6047-fac5-495e-982d-c593308374d8.png)
