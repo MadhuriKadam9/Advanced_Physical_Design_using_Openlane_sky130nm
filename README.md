@@ -16,9 +16,17 @@ This Repo consists of all the documentation done during Physical Design Workshop
     - [Spice Simulation of Inverter netlist](#spice-simulation-of-inverter-netlist)
   - [Day 4 - Pre-layout timing analysis and importance of good clock tree](#day-4---pre-layout-timing-analysis-and-importance-of-good-clock-tree)       - [Floorplan](#floorplan)
     - [Placement](#placement) 
+    - [Floorplan](#floorplan)
+    - [Placement](#placement) 
+    - 
+ - [Day 5 - Final steps for RTL2GDS](#day-5---final-steps-for-rtl2gds)     
+    - [Power Distribution Network Generation](#power-distribution-network-generation)
+    - [Final Layout Picorv32a](#final-layout-picorv32a) 
+    - [SPEF File Generation](#spef-file-generation)
+    - [Placement](#placement)
+- [References](#references)
+- [Acknowledgement](#acknowledgement)    
     
-      
-      
 # RTL to GDSII Process Flow
   RTL to GDSII Flow refers to the process of transforming logical Register Transfer Level(RTL) Design to a fabrication ready layout file in GDSII format. GDSII file is given to the foundary for chip fabrication.
   
