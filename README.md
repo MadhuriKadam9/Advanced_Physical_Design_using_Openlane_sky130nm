@@ -325,9 +325,12 @@ To ensure this various clock distribution techniques are there as follows
     `detailed_placement`
     `gen_pdn`
     
+    
+    
     ![image](https://user-images.githubusercontent.com/88900482/184159077-7b576a94-1d11-49bb-b630-b4b8375c7279.png)
     
-     ## Routing using TritonRoute
+   ## Routing using TritonRoute
+   
    OpenLANE uses TritonRoute, to carry out routing of tracks.
    The routing process is executed in two parts:
    1. Global Routing - Routing guides in the form of rectangls are generated for interconnects.
