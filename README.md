@@ -3,19 +3,20 @@ This Repo consists of all the documentation done during Physical Design Workshop
 
 # Table of Contents
   - [RTL to GDSII Process Flow](#rtl-to-gdsii-process-flow)
-  - [About Google SkyWater PDK](#about-google-skywater-pdk)
   - [List of All Open-Source Tools Used](#list-of-all-open-source-tools-used)
-  - [Setting Up Environment](#setting-up-environment)
   - [Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#day-1---inception-of-open-source-eda-openlane-and-sky130-pdk)
-    - [Basic IC Design Terminologies](#basic-ic-design-terminologies)
-    - [Introduction To RISC-V](#introduction-to-risc-v)
-    - [SoC Design and OpenLANE](#soc-design-and-openlane)
-      - [Open-Source PDK Directory Structure](#open-source-pdk-directory-structure)
-      - [What is OpenLANE](#what-is-openlane)
-    - [Open-Source EDA Tools](#open-source-eda-tools)
-      - [OpenLANE Initialization](#openlane-initialization)
-      - [Design Preparation](#design-preparation)
-      - [Design Synthesis and Results](#design-synthesis-and-results)
+    - [Basic IC Definitions](#basic-ic-definitions)
+    - [Invoking Openlane](#invoking-openlane)
+      -[Running Synthesis of design and its results](#running-synthesis-of-design-and-its-results)
+  - [Day 2 - Running Floorplan and Placement and Analysing results](#day-2---running-floorplan-and-placement-and-analysing-results)
+    - [Floorplan](#floorplan)
+    - [Placement](#placement)  
+  - [Day 3 - Design of Standard cell using Magic Layout and ngspice characterization](#day-3---design-of-standard-cell-using-magic-layout-and-ngspice-characterization)
+    - [Inverter Layout to Netlist creation](#inverter-layout-to-netlist-creation)
+    - [Placement](#placement)
+      
+    
+      
       
 # RTL to GDSII Process Flow
   RTL to GDSII Flow refers to the process of transforming logical Register Transfer Level(RTL) Design to a fabrication ready layout file in GDSII format. GDSII file is given to the foundary for chip fabrication.
