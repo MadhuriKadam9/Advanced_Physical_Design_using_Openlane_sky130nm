@@ -195,8 +195,9 @@ Then invoking theh docker and preparing the previous runs folder to overwrite as
 ![image](https://user-images.githubusercontent.com/88900482/184132940-bb0dd560-4060-4670-927f-4d4abdb8c8b1.png)
 
 Add below two lines on the fly
-set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
-add_lefs -src $lefs
+
+`set_lefs [glob $::env(DESIGN_DIR)/src/*.lef]`
+`add_lefs -src $lefs`
 
 ![image](https://user-images.githubusercontent.com/88900482/184133529-a8351461-1c17-44b8-8855-6ec8824feddf.png)
 
@@ -213,5 +214,51 @@ Here we can observe 1554 cells of sky130_vsdinv are included. Chip area for modu
 Slack Violation is 23.89ns as it is –ve slack
 Tns = total negative slack     wns= worst negative slack
 We need to work on this in order to convert the slack in 0 or positive value. Then only we can met the slack.
+
+Setting various synthesis variables on the fly as shown below
+`set ::env(SYNTH_STRATEGY) 1`
+`set ::env(SYNTH_SIZING) 1`
+`set ::env(SYNTH_BUFFERING) 1`
+ 
+ ![image](https://user-images.githubusercontent.com/88900482/184136648-ea3c8e1b-c7e6-4648-bd0a-19f68c7af5f9.png)
+ 
+ Then running synthesis again
+ 
+ ![image](https://user-images.githubusercontent.com/88900482/184136763-539d848c-6e8d-4d07-9ccb-995b2c81a07d.png)
+
+# Running Floorplan
+Once Synthesis is done we will run floorplan by executing below commands one by one as per the requirement in new openlane flow
+
+- `init_floorplan`
+![image](https://user-images.githubusercontent.com/88900482/184138418-f3efb400-05dc-4611-9c73-204c92ded450.png)
+
+
+- `place_io`
+![image](https://user-images.githubusercontent.com/88900482/184138485-76e2aaf0-1a7e-446f-8cb5-2d438b598c19.png)
+
+
+- `global_placement_or`
+![image](https://user-images.githubusercontent.com/88900482/184138573-517f73af-bb0f-496d-9cb9-1f2c8053ad0b.png)
+
+
+- `tap_decap_or`
+![image](https://user-images.githubusercontent.com/88900482/184138616-92253b65-5531-4eb2-833a-dcd6270e0a5d.png)
+
+
+- `global_placement_or`
+![image](https://user-images.githubusercontent.com/88900482/184138660-b34909fc-7aff-47e6-9a0e-ce31b2422b68.png)
+
+
+- `gen_pdn`
+![image](https://user-images.githubusercontent.com/88900482/184138697-50e2763c-5859-4519-9247-67a6ccb8afee.png)
+
+
+- `run_placement`
+![image](https://user-images.githubusercontent.com/88900482/184138737-a009e77d-5258-45c2-b4b4-da11a51d2ef3.png)
+
+
+To check whether our vsdinv.lef is included in merged.lef file, open merged .lef as shown below
+
+![image](https://user-images.githubusercontent.com/88900482/184138273-db864f54-6056-4e1b-84d7-ce72d90074e6.png)
 
 
