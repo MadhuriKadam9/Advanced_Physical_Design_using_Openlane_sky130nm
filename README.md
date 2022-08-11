@@ -14,11 +14,16 @@ This Repo consists of all the documentation done during Physical Design Workshop
   - [Day 3 - Design of Standard cell using Magic Layout and ngspice characterization](#day-3---design-of-standard-cell-using-magic-layout-and-ngspice-characterization)
     - [Inverter Layout to Netlist creation](#inverter-layout-to-netlist-creation)
     - [Spice Simulation of Inverter netlist](#spice-simulation-of-inverter-netlist)
-  - [Day 4 - Pre-layout timing analysis and importance of good clock tree](#day-4---pre-layout-timing-analysis-and-importance-of-good-clock-tree)       - [Floorplan](#floorplan)
-    - [Placement](#placement) 
-    - [Floorplan](#floorplan)
-    - [Placement](#placement) 
-    - 
+  - [Day 4 - Pre-layout timing analysis and importance of good clock tree](#day-4---pre-layout-timing-analysis-and-importance-of-good-clock-tree)       - [Extracting lef file from Inverter mag file](#extracting-lef-file-from-inverter-mag-file)
+      -[Grid change](#grid-change)
+      -[Writing lef](#writing-lef)
+      -[Copying all required files on Picorv32a src folder](#copying-all-required-files-on-picorv32a-src-folder)
+      -[Setting Environmental Variable](#setting-environmental-variable)
+    - [Running Synthesis](#running-synthesis) 
+    - [Running Floorplan](#running-floorplan)
+    - [Analysing Floorplan in Magic](#placement-analysing-floorplan-in-magic)
+    - [To configure OpenSTA for post-synth timing analysis](#to-configure-opensta-for-post-synth-timing-analysis)
+    - [Clock Tree Synthesis using TritonCTS](#clock-tree-synthesis-using-tritoncts)
  - [Day 5 - Final steps for RTL2GDS](#day-5---final-steps-for-rtl2gds)     
     - [Power Distribution Network Generation](#power-distribution-network-generation)
     - [Final Layout Picorv32a](#final-layout-picorv32a) 
@@ -190,8 +195,8 @@ In order to plug in our Sky130_vsdinv.lef file with Picorv32a. we need to copy a
 
 ![image](https://user-images.githubusercontent.com/88900482/183951735-697ab199-d6c6-458b-a289-929dcaf9d83d.png)
 
-### Setting Environmental variable in config.tcl
-Edited the config.tcl file as shown below
+### Setting Environmental Variable 
+Edited the config.tcl file to set environmental variables as shown below
 `set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib"`
 `set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib"`
 
@@ -236,7 +241,7 @@ Setting various synthesis variables on the fly as shown below
  
  ![image](https://user-images.githubusercontent.com/88900482/184136763-539d848c-6e8d-4d07-9ccb-995b2c81a07d.png)
 
-# Running Floorplan
+## Running Floorplan
 Once Synthesis is done we will run floorplan by executing below commands one by one as per the requirement in new openlane flow
 
 - `init_floorplan`
@@ -271,7 +276,7 @@ To check whether our vsdinv.lef is included in merged.lef file, open merged .lef
 
 ![image](https://user-images.githubusercontent.com/88900482/184138273-db864f54-6056-4e1b-84d7-ce72d90074e6.png)
 
-# Analysing Floorplan in Magic
+## Analysing Floorplan in Magic
 Once we have done with the placement we will read corresponding merged.lef and picorv32a.placement.def files in magic by executing command given below.
 
 `06-08_06-23/results/placement$ magic -T /home/madhurib.saksham/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &`
@@ -288,7 +293,7 @@ This will open Picorv32a floorplan with placement in magic as shown below
 
 In above diagram layout we can see it has included our sky130_vsdinv.lef cell also metal 1 is shared between two vertical cells this is calle abuttment. Power and GND rails are shared.
 
-# To configure OpenSTA for post-synth timing analysis
+## To configure OpenSTA for post-synth timing analysis
 OpenSTA is tool used for Static timing Analysis. It is inside openroad of Openlane flow. So to use openSTA we need to invoke openroad in openlane flow by executing command `openroad`
 
 sta command works on pre_sta.conf file. So updating this file from vsdstdcell repo as given below and copying that file in openlane directory.
@@ -307,7 +312,7 @@ Now Static timing Analysis is performed by executing following command `sta pre_
 
 ![image](https://user-images.githubusercontent.com/88900482/184145298-c292b18b-b8ba-4da9-aee8-7d08aad63c3c.png)
 
-# Clock Tree Synthesis using TritonCTS
+## Clock Tree Synthesis using TritonCTS
 
 Clock Tree Synthesis is the process in which real clock beffers are added in design to ditribute clock signal to all the sequential elements without resulting in latency or clock skew.
 
@@ -327,7 +332,7 @@ To ensure this various clock distribution techniques are there as follows
    In a normal RTL to GDSII flow the PDN generation is done before the placement step, but in the OpenLANE flow PDN is executed after the Clock Tree Synthesis(CTS). This step generates all the tracks and power rails on layout required for the design. 
    PDN Generation is executed by runnig following commands one by one.
    
-    `init_floorplan'
+    `init_floorplan`
     `place_io`
     `global_placement_or`
     `detailed_placement`
