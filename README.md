@@ -212,7 +212,7 @@ Then invoking theh docker and preparing the previous runs folder to overwrite as
 
 Add below two lines on the fly
 
-`set_lefs [glob $::env(DESIGN_DIR)/src/*.lef]`
+`set lefs [glob $::env(DESIGN_DIR)/src/*.lef]`
 `add_lefs -src $lefs`
 
 ![image](https://user-images.githubusercontent.com/88900482/184133529-a8351461-1c17-44b8-8855-6ec8824feddf.png)
@@ -383,6 +383,3 @@ To ensure this various clock distribution techniques are there as follows
   - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
   - [Nickson Jose](https://github.com/nickson-jose)
   
-
-
-   
