@@ -325,9 +325,9 @@ To ensure this various clock distribution techniques are there as follows
     `detailed_placement`
     `gen_pdn`
     
-    
-    
-    ![image](https://user-images.githubusercontent.com/88900482/184159077-7b576a94-1d11-49bb-b630-b4b8375c7279.png)
+
+![image](https://user-images.githubusercontent.com/88900482/184164673-2aea6047-fac5-495e-982d-c593308374d8.png)
+
     
    ## Routing using TritonRoute
    
