@@ -13,8 +13,9 @@ This Repo consists of all the documentation done during Physical Design Workshop
     - [Placement](#placement)  
   - [Day 3 - Design of Standard cell using Magic Layout and ngspice characterization](#day-3---design-of-standard-cell-using-magic-layout-and-ngspice-characterization)
     - [Inverter Layout to Netlist creation](#inverter-layout-to-netlist-creation)
-    - [Placement](#placement)
-      
+    - [Spice Simulation of Inverter netlist](#spice-simulation-of-inverter-netlist)
+  - [Day 4 - Pre-layout timing analysis and importance of good clock tree](#day-4---pre-layout-timing-analysis-and-importance-of-good-clock-tree)       - [Floorplan](#floorplan)
+    - [Placement](#placement) 
     
       
       
