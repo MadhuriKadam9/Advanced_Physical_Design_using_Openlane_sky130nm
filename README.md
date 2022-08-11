@@ -14,7 +14,7 @@ This Repo consists of all the documentation done during Physical Design Workshop
   - [Day 3 - Design of Standard cell using Magic Layout and ngspice characterization](#day-3---design-of-standard-cell-using-magic-layout-and-ngspice-characterization)
     - [Inverter Layout to Netlist creation](#inverter-layout-to-netlist-creation)
     - [Spice Simulation of Inverter netlist](#spice-simulation-of-inverter-netlist)
-  - [Day 4 - Pre-layout timing analysis and Importance of good clock tree](#day-4---pre-layout-timing-analysis-and-importance-of-good-clock-tree)
+  - [Day 4 - Pre-layout timing analysis and Clock Tree Synthesis](#day-4---pre-layout-timing-analysis-and-clock-tree-synthesis)
     - [Extracting lef file from Inverter mag file](#extracting-lef-file-from-inverter-mag-file)
        - [Grid change](#grid-change)
        - [Writing lef](#writing-lef)
@@ -161,7 +161,7 @@ Modified Spice netlist of Inverter is then run using ngspice with following comm
 Transient Response of Inverter
 <img width="896" alt="wf" src="https://user-images.githubusercontent.com/88900482/183699555-b41756bb-7ec7-49de-a6d2-74897cea1490.PNG">
 
-# Day 4 - Pre-layout timing analysis and importance of good clock tree
+# Day 4 - Pre-layout timing analysis and Clock Tree Synthesis
 
 ## Extracting lef file from Inverter mag file
 
