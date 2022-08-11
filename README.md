@@ -278,8 +278,22 @@ This will open Picorv32a floorplan with placement in magic as shown below
 
 In above diagram layout we can see it has included our sky130_vsdinv.lef cell also metal 1 is shared between two vertical cells this is calle abuttment. Power and GND rails are shared.
 
+# To configure OpenSTA for post-synth timing analysis
+OpenSTA is tool used for Static timing Analysis. It is inside openroad of Openlane flow. So to use openSTA we need to invoke openroad in openlane flow by executing command `openroad`
 
+sta command works on pre_sta.conf file. So updating this file from vsdstdcell repo as given below and copying that file in openlane directory.
 
+![image](https://user-images.githubusercontent.com/88900482/184143956-efa61177-281a-4e9a-b534-77c83398a6bd.png)
 
+This pre_sta.conf file also reads various sky130_fd_sc_hd_* files and my_base.sdc file as shown below.
 
+![image](https://user-images.githubusercontent.com/88900482/184144824-9106a338-3fa4-4b65-9aee-d0e22906cd26.png)
+
+![image](https://user-images.githubusercontent.com/88900482/184144858-ee446a67-1062-4d1e-b56c-6cd04e1ae63d.png)
+
+Now Static timing Analysis is performed by executing following command `sta pre_sta.conf`
+
+![image](https://user-images.githubusercontent.com/88900482/184145263-5b512466-6249-4b81-a2ae-20633cb884d1.png)
+
+![image](https://user-images.githubusercontent.com/88900482/184145298-c292b18b-b8ba-4da9-aee8-7d08aad63c3c.png)
 
