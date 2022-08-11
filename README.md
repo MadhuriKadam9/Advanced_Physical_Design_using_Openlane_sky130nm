@@ -180,4 +180,38 @@ In order to plug in our Sky130_vsdinv.lef file with Picorv32a. we need to copy a
 
 ![image](https://user-images.githubusercontent.com/88900482/183951735-697ab199-d6c6-458b-a289-929dcaf9d83d.png)
 
+### Setting Environmental variable in config.tcl
+Edited the config.tcl file as shown below
+`set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib"`
+`set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib"`
+
+![image](https://user-images.githubusercontent.com/88900482/184130108-2e930bdf-9de4-4611-8a94-f9bdd5e33b41.png)
+Then invoking theh docker and preparing the previous runs folder to overwrite as shown below 
+
+`madhurib.saksham@sky130-pd-workshop-08:~/Desktop/work/tools/openlane_working_dir/openlane$ docker`
+`bash-4.2$ ./flow.tcl –interactive`
+`% prep -design picorv32a -tag 06-08_06-23 -overwrite`
+
+![image](https://user-images.githubusercontent.com/88900482/184132940-bb0dd560-4060-4670-927f-4d4abdb8c8b1.png)
+
+Add below two lines on the fly
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+![image](https://user-images.githubusercontent.com/88900482/184133529-a8351461-1c17-44b8-8855-6ec8824feddf.png)
+
+## Running Synthesis
+One the design preparation is done we can see that it has merged sky130_vsdinv.lef file
+Then execute command `run_synthesis`
+
+![image](https://user-images.githubusercontent.com/88900482/184134116-37899fa2-67d1-4b4d-bf4d-748a663afe72.png)
+
+Here we can observe 1554 cells of sky130_vsdinv are included. Chip area for module picorv32a is 147712.918400
+
+![image](https://user-images.githubusercontent.com/88900482/184134545-bba4aa3d-13fd-4f0a-ac37-e0f9f673dec4.png)
+
+Slack Violation is 23.89ns as it is –ve slack
+Tns = total negative slack     wns= worst negative slack
+We need to work on this in order to convert the slack in 0 or positive value. Then only we can met the slack.
+
 
