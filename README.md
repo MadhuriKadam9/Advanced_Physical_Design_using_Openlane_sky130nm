@@ -297,3 +297,73 @@ Now Static timing Analysis is performed by executing following command `sta pre_
 
 ![image](https://user-images.githubusercontent.com/88900482/184145298-c292b18b-b8ba-4da9-aee8-7d08aad63c3c.png)
 
+# Clock Tree Synthesis using TritonCTS
+
+Clock Tree Synthesis is the process in which real clock beffers are added in design to ditribute clock signal to all the sequential elements without resulting in latency or clock skew.
+
+To ensure this various clock distribution techniques are there as follows
+  1. H - Tree
+  2. X - Tree
+  3. Fish bone
+ 
+ CTS is executed using TritonCTS tool in Openlane. It is always done after floorplan and placement as it works on placement.def file which is resulted after placement run.
+ 
+ It is done by executing command `run_cts`
+ 
+ <img width="538" alt="cts_success" src="https://user-images.githubusercontent.com/88900482/184153315-395d4563-c3ac-4b2e-925c-2412ddf9a589.PNG">
+
+# Day 5 - Final steps for RTL2GDS
+ ## Power Distribution Network Generation
+   In a normal RTL to GDSII flow the PDN generation is done before the placement step, but in the OpenLANE flow PDN is executed after the Clock Tree Synthesis(CTS). This step generates all the tracks and power rails on layout required for the design. 
+   PDN Generation is executed by runnig following commands one by one.
+   
+    `init_floorplan'
+    `place_io`
+    `global_placement_or`
+    `detailed_placement`
+    `tap_decap_or`
+    `detailed_placement`
+    `gen_pdn`
+    
+    ![image](https://user-images.githubusercontent.com/88900482/184159077-7b576a94-1d11-49bb-b630-b4b8375c7279.png)
+    
+     ## Routing using TritonRoute
+   OpenLANE uses TritonRoute, to carry out routing of tracks.
+   The routing process is executed in two parts:
+   1. Global Routing - Routing guides in the form of rectangls are generated for interconnects.
+   2. Detailed Routing - This accepts lef, def and Preprocessed routing guides. It gives detailed routing with optimized wire length and via count.
+   
+   TritonRoute 14 ensures there are no DRC violations after routing. But it takes a lot of time and memory for execution.
+   
+   Routing is done by running following command.
+   
+    run_routing
+   
+   ![image](https://user-images.githubusercontent.com/88900482/184161167-ba3912c1-4467-44e7-ada9-1e8bfcce3896.png)
+   
+   ## Final Layout Picorv32a
+   
+   <img width="343" alt="final" src="https://user-images.githubusercontent.com/88900482/184163457-9d23198f-f3f1-4a8b-acd0-c7bc92300435.PNG">
+
+   <img width="442" alt="final" src="https://user-images.githubusercontent.com/88900482/184163149-217dce7e-1ae0-46ca-9412-d4d384526506.PNG">
+
+   ## SPEF File Generation
+   
+   In the new openlane flow SPEF extraction is carried out inside wrapper, so no need to do it explicitly.
+   We can see the picorv32a.spef file in /reults/routing folder as shown below.
+   
+   ![image](https://user-images.githubusercontent.com/88900482/184162202-6c2a482b-9a1b-4747-a42e-f38a44ef6221.png)
+   
+# References
+  - RISC-V: https://riscv.org/
+  - VLSI System Design: https://www.vlsisystemdesign.com/
+  - OpenLANE: https://github.com/The-OpenROAD-Project/OpenLane
+  - VSDSTDCELL: https://github.com/nickson-jose/vsdstdcelldesign.git
+
+# Acknowledgement
+  - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
+  - [Nickson Jose](https://github.com/nickson-jose)
+  
+
+
+   
